@@ -1,0 +1,187 @@
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body{
+    font-family:'Poppins',sans-serif ;
+    font-size: 1.6rem;
+    font: weight 400px;
+    color: #313638;
+    position: relative;
+    z-index: 1;
+}
+
+h1,
+h2,
+h3,
+h4{
+    font-weight:350;
+}
+
+a{
+    color:palevioletred;
+    text-decoration:none;
+}
+
+img{
+    max-width:100%;   
+}
+.container{
+    max-width:120rem;
+    margin:0 auto;
+}
+.container-md{
+    max-width:100rem;
+    margin:0 auto;
+}
+@media only screen and (max-width:1200px){
+    .container{
+        padding: 0 3rem;
+    }
+    .container-md{
+        padding: 0 3rem;
+    }
+}
+
+.header{
+    position: relative;
+    overflow:hidden;
+    display: flex;
+    flex-direction: column;
+
+
+}
+.nav{
+    padding: 1rem;
+}
+
+.nav-container{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    padding:10px 50px;
+    background-color: lightgoldenrodyellow;
+    
+}
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    padding:10px 50px;
+}
+.bx{
+    width: 35%;
+}
+
+/*hero*/
+.header .hero-img {
+    position: absolute;
+    bottom: -10%;
+    right: -5%;
+    height: 70rem;
+    object-fit: contain;
+  }
+  
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    transform: translate(25%, -50%);
+  }
+  
+  .hero-content h2 {
+    color: #b888ff;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content .discount {
+    color: #fbb419;
+  }
+  
+  .hero-content h1 span {
+    color: #253b70;
+    font-size: 6rem;
+    font-weight: 700;
+    display: block;
+    line-height: 1;
+    text-shadow: 3px 3px 0 #f1f1f1, 4px 4px 0 #f1f1f1;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #fc7c7c;
+    padding: 1.2rem 4rem;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 3rem;
+  }
+  
+  @media only screen and (max-width: 1200px) {
+    .header .hero-img {
+      right: -20%;
+    }
+  
+    .hero-content {
+      transform: translate(20%, -50%);
+    }
+  
+    .hero-content h2 {
+      font-size: 2rem;
+    }
+  
+    .hero-content h1 span {
+      font-size: 5rem;
+    }
+  }
+  
+  @media only screen and (max-width: 996px) {
+    .header {
+      min-height: 70vh;
+    }
+  
+    .header .hero-img {
+      height: 40rem;
+      right: -10%;
+    }
+  }
+  
+  @media only screen and (max-width: 567px) {
+    .header {
+      min-height: 100vh;
+    }
+  
+    .header .hero-img {
+      height: 40rem;
+      bottom: -15%;
+    }
+  
+    .hero-content {
+      top: 40%;
+      transform: translate(15%, -50%);
+    }
+  
+    .header .hero-img {
+      right: 0%;
+    }
+  
+    .hero-content h2 {
+      font-size: 1.8rem;
+    }
+  
+    .hero-content h1 span {
+      font-size: 4rem;
+    }
+  
+    .hero-content a {
+      padding: 1rem 3rem;
+    }
+  }
