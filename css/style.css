@@ -1,97 +1,132 @@
-*,*::before,*::after{
+:root {
+    --white: #fff;
+    --black: #222;
+    --pink: #f60091;
+    --grey: #444;
+    --grey2: #959595;
+    --grey-alt: #d1e2e9;
+    --yellow: #ffd800;
+    --green: #59b210;
+  }
+  
+  *,
+  *::before,
+  *::after {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
-}
-
-html{
+  }
+  
+  html {
+    scroll-behavior: smooth;
     box-sizing: border-box;
     font-size: 62.5%;
-}
-
-body{
-    font-family:'Poppins',sans-serif ;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
     font-size: 1.6rem;
-    font: weight 400px;
-    color: #313638;
+    font-weight: 400;
+    background-color: #fff;
+    color: #243a6f;
     position: relative;
     z-index: 1;
-}
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 500;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  .container {
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+  
+  .container-md {
+    max-width: 100rem;
+    margin: 0 auto;
+  }
 
-h1,
-h2,
-h3,
-h4{
-    font-weight:350;
-}
-
-a{
-    color:palevioletred;
-    text-decoration:none;
-}
-
-img{
-    max-width:100%;   
-}
-.container{
-    max-width:120rem;
-    margin:0 auto;
-}
-.container-md{
-    max-width:100rem;
-    margin:0 auto;
-}
-@media only screen and (max-width:1200px){
-    .container{
-        padding: 0 3rem;
+  .header{
+    background-color:#aae4ff;
+  }
+  
+  @media only screen and (max-width: 1200px) {
+    .container {
+      padding: 0 3rem;
     }
-    .container-md{
-        padding: 0 3rem;
+  
+    .container-md {
+      padding: 0 3rem;
     }
-}
+  }
+  
+  /* Header */
 
-.header{
-    position: relative;
-    overflow:hidden;
-    display: flex;
-    flex-direction: column;
-
-
-}
-.nav{
-    padding: 1rem;
-}
-
-.nav-container{
+  .logo{
     display: flex;
     align-items: center;
     justify-content:space-around;
     padding:10px 50px;
+    width: max-content;
+  }
+  .nav {
+    padding: 1.6rem 0;
+  }
+
+  .nav-container{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    padding:1px 1px;
     background-color: lightgoldenrodyellow;
-    
-}
-.logo{
+    position:relative}
+
+  .nav.fix-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #243a6f;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+  }
+  
+  .navigation {
     display: flex;
     align-items: center;
-    justify-content:space-around;
-    padding:10px 50px;
-}
-.bx{
-    width: 35%;
-}
-
-/*hero*/
-.header .hero-img {
-    position: absolute;
-    bottom: -10%;
-    right: -5%;
-    height: 70rem;
+    justify-content: space-between;
+ 
+  }
+  
+  /* Hero */
+  .header .hero-img {
+    position:absolute;
+    bottom: -30%;
+    right: -10%;
+    height: 60rem;
     object-fit: contain;
   }
   
   .hero-content {
     position: absolute;
-    top: 50%;
+    top: 70%;
     transform: translate(25%, -50%);
   }
   
@@ -103,16 +138,16 @@ img{
   }
   
   .hero-content .discount {
-    color: #fbb419;
+    color: #cf5479;
   }
   
   .hero-content h1 span {
-    color: #253b70;
+    color: #482570;
     font-size: 6rem;
     font-weight: 700;
     display: block;
     line-height: 1;
-    text-shadow: 3px 3px 0 #f1f1f1, 4px 4px 0 #f1f1f1;
+    text-shadow: 3px 3px 0 #e7ecb9, 4px 4px 0 #f1f1f1;
   }
   
   .btn {
@@ -120,18 +155,19 @@ img{
     background-color: #fc7c7c;
     padding: 1.2rem 4rem;
     color: #fff;
-    font-weight: 600;
+    font-weight: 900;
     text-transform: uppercase;
-    margin-top: 3rem;
+    margin-top: 4rem;
+    
   }
   
   @media only screen and (max-width: 1200px) {
     .header .hero-img {
-      right: -20%;
+      right:20%;
     }
   
     .hero-content {
-      transform: translate(20%, -50%);
+      transform: translate(10%, -60%);
     }
   
     .hero-content h2 {
@@ -145,7 +181,7 @@ img{
   
   @media only screen and (max-width: 996px) {
     .header {
-      min-height: 70vh;
+      min-height: 50vh;
     }
   
     .header .hero-img {
@@ -156,7 +192,7 @@ img{
   
   @media only screen and (max-width: 567px) {
     .header {
-      min-height: 100vh;
+      min-height: 70vh;
     }
   
     .header .hero-img {
@@ -166,7 +202,7 @@ img{
   
     .hero-content {
       top: 40%;
-      transform: translate(15%, -50%);
+      transform: translate(15%, -10%);
     }
   
     .header .hero-img {
@@ -174,14 +210,15 @@ img{
     }
   
     .hero-content h2 {
-      font-size: 1.8rem;
+      font-size: 1.3rem;
     }
   
-    .hero-content h1 span {
-      font-size: 4rem;
+    .hero-content h1{
+      font-size: 3rem;
     }
   
     .hero-content a {
       padding: 1rem 3rem;
     }
   }
+  
