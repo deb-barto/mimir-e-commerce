@@ -500,6 +500,7 @@
   z-index: 0;
 }
 
+
 .product-detail .form {
   margin-bottom: 3rem;
 }
@@ -577,3 +578,10 @@
   width: 100%; 
   position: fixed;
 }
+
+.font-modal {
+  font-weight: 700;
+}
+.label {
+	padding: 12px 12px 12px 0;
+	display: inline-block;}

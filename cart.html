@@ -22,7 +22,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="">
         </head>
-        <body>
+        <body style="background-color: lightblue;">
             <header id="home" class="header">
                 <!--navegation-->
                 <div class ="nav-container">
@@ -41,6 +41,72 @@
                 </div>
               </div>
             </header>
+
+
+            <div class="product" style="margin-top:250px; display:flex; flex-direction: column;">
+				<h3 class="">Se cadastre conosco para recerber e-mail soobre como tirar medidas e formas de pagamento</h3>
+				<form id="client_form" style="margin-top:10px ;margin:auto" class="cadastrar">
+					<div class="row">
+						<label for="fullname">Nome*</label>
+						<input
+							type="text"
+							id="fullname"
+							name="fullname"
+							placeholder="Digite seu nome"
+						/>
+					</div>
+					<div class="row">
+						<label for="city">Cidade*</label>
+						<input
+							type="text"
+							id="city"
+							name="city"
+							placeholder="Cidade onde mora"
+						/>
+					</div>
+					<div class="row">
+						<label for="uf">Estado*</label>
+						<input
+							type="text"
+							id="uf"
+							name="uf"
+							placeholder="Estado"
+						/>
+					</div>
+					<div class="row">
+						<label for="street">Número*</label>
+						<input
+							type="text"
+							id="street"
+							name="street"
+							placeholder="Rua..."
+						/>
+					</div>
+					<div class="row">
+						<label for="cep">CEP*</label>
+						<input
+							type="text"
+							id="cep"
+							name="cep"
+							placeholder="CEP"
+						/>
+					</div>
+                    <div class="row">
+						<label for="email">e-mail*</label>
+						<input
+							type="text"
+							id="email"
+							name="email"
+							placeholder="email"
+						/>
+					<div class="row">
+					<a  href="/site/cart.html">	<input class="cadastrar btn" type="submit" value="Cadastrar" style="margin: 20px;" /></a>
+
+					</div>
+				</form>
+			</div>
+
+
             <footer id="home" class="footer1">
                 <div class ="nav-container">
                   <div class="logo">
@@ -60,5 +126,6 @@
           <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
           <!--custon script-->
           <script src="/site/JS/index.js"></script>
+          <script src="../assets/sweetalert/sweetalert.min.js" type="text/javascript"></script>
         </body>
     </html>

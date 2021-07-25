@@ -59,6 +59,7 @@ let products =[
 for (let i=0; i< carts.length; i++){
     carts[i] .addEventListener('click',()=>{
         cartNumbers(products[i]);
+        totalCost(products[i]);
     })
 }
 function onLoadCartNumbers() {
@@ -101,7 +102,103 @@ function setItems(product){
             [product.tag]: product
         }
     }
-
-    localStorage.setItem("ProductsinCart", JSON.stringify(cartItems));
+    localStorage.setItem("ProductsInCart", JSON.stringify(cartItems));
 }
+
+function totalCost(product){
+    let carCost = localStorage.getItem('totalCost');
+
+    if(carCost != null){
+        carCost = parseInt(carCost);
+        localStorage.setItem("totalCost", carCost + product.price)
+    }else{
+        localStorage.setItem("totalCost", product.price);
+    }
+}
+
+function displayCart(){
+    let cartItems = localStorage.getItem("ProductsInCart");
+    cartItems = JSON.parse(cartItems);
+    let productContainer = document.querySelector(".products-container");
+
+    console.log(cartItems);
+
+    if( cartItems && productContainer ){
+        productContainer.innerHTML = '';
+       
+        Object.values(cartItems).map(item =>{
+            productContainer.innerHTML += `
+                <div class="memes">
+                <box-icon name='x-circle' type='solid' ></box-icon>
+                <img src= "/site/assets/kigurumis/${item.tag}.jpg">
+                <span>ola</span>
+                <span>${item.name}</span>
+                </div>
+
+            `
+        });
+
+    }
+}
+
+const formClient = document.getElementById("client_form");
+if (formClient != null) {
+	formClient.addEventListener("submit", (event) => {
+		event.preventDefault();
+
+		let fullname = document.getElementById("fullname").value;
+		let email = document.getElementById("email").value;
+		let city = document.getElementById("city").value;
+		let uf = document.getElementById("uf").value;
+		let street = document.getElementById("street").value;
+		let cep = document.getElementById("cep").value;
+
+		if (fullname == '' || email == '' || city == '' || uf == '' || street == '' || cep == '') {
+			returnMessage('warning', 'Ops, é necessário preencher todos os campos');
+			return;
+		}
+
+		let client = {
+			fullname: fullname,
+			email: email,
+			city: city,
+			uf: uf,
+			street: street,
+			cep: cep
+		};
+
+		storeOnLocalStorage('clients', client);
+		returnMessage('success', "Cliente cadastrado com sucesso");
+
+		cleanField('fullname');
+		cleanField('email');
+		cleanField('city');
+		cleanField('uf');
+		cleanField('street');
+		cleanField('cep');
+
+	});
+}
+
+function storeOnLocalStorage(key, value) {
+	let data = JSON.parse(localStorage.getItem(key));
+
+	if (data) {
+		data.push(value);
+	} else {
+		data = [ value ];
+	}
+	localStorage.setItem(key ,JSON.stringify(data));
+}
+
+
+function cleanField(fieldName) {
+	document.getElementById(fieldName).value = '';
+}
+
+function redirect(location) {
+	window.location.href=`../pages/${location}.html`
+}
+
 onLoadCartNumbers();
+displayCart();
