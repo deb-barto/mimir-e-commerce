@@ -197,7 +197,7 @@ function cleanField(fieldName) {
 }
 
 function redirect(location) {
-	window.location.href=`../pages/${location}.html`
+	window.location.href=`/index.html`
 }
 
 onLoadCartNumbers();

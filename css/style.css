@@ -570,6 +570,7 @@
     width: 100%;
     gap: 0.5rem;
   }
+
 }
  /*foooter*/ 
 .footer1{
@@ -582,6 +583,15 @@
 .font-modal {
   font-weight: 700;
 }
-.label {
-	padding: 12px 12px 12px 0;
-	display: inline-block;}
+label {
+	display: inline-block;
+  margin-right: 90%;
+}
+
+
+  .row{
+    display:flex;
+    flex-direction:column;
+    width: 50vw;
+    padding: auto;
+  }
