@@ -168,8 +168,6 @@ if (formClient != null) {
 		};
 
 		storeOnLocalStorage('clients', client);
-		returnMessage('success', "Cliente cadastrado com sucesso");
-
 		cleanField('fullname');
 		cleanField('email');
 		cleanField('city');
