@@ -1,5 +1,5 @@
 ﻿# mimir-e-commerce
-da uma olhadinha no site aqui embaixo
+da uma olhadinha no site aqui:
 https://mimir-e-commerce.vercel.app/  
 
 usei nesse projeto:
